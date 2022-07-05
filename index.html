@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Alarm Clock</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <!-- Alarm card element-->
+        <article id="card">
+            <h3 id="main_head">Alarm Clock</h3>
+            <!-- Clock  -->
+            <section id="curr_time">
+                <span></span>
+            </section>
+            <!-- User input fields -->
+            <section id="set_alarm">
+                <input type="number" id="hours" min="0" max="12" placeholder="hh"><span class="colon">:</span>
+                <input type="number" id="minutes" min="0" max="59" placeholder="mm"><span class="colon">:</span>
+                <input type="number" id="seconds" min="0" max="59" placeholder="ss"> 
+                <select name="" id="am_pm">
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                </select>
+                <!-- Set alarm button -->
+                <button id="set_alarm_btn" type="reset">Set Alarm</button>
+            </section>
+            <!-- List of alarms set by the user -->
+            <h3 id="small_head">Alarms</h3>
+            <ul id="alarms">
+                
+            </ul>
+        </article>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
