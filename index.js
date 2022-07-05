@@ -87,7 +87,7 @@ function getCurrentTime() {
 }
 getCurrentTime();
 
-const audio = new Audio('./assets/alarm.wav');
+const audio = new Audio('assets/alarm.wav');
 audio.loop = true;
 
 //to start playing alarm
