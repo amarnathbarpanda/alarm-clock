@@ -1,5 +1,13 @@
 //getting the referrences
-const currentTime = document.getElementById('curr_time').getElementsByTagName('span')[0];
+
+
+fetch('./assets/alarm.wav')
+// .then(res=> res.json())
+.then((data)=> {
+    const audio = new Audio(data.url);
+    audio.loop = true;  
+
+    const currentTime = document.getElementById('curr_time').getElementsByTagName('span')[0];
 const setAlarmBtn = document.getElementById('set_alarm_btn');
 const alarmList = document.querySelector('#alarms');
 
@@ -86,17 +94,14 @@ function getCurrentTime() {
     }, 1000);
 }
 getCurrentTime();
+    
+    //to start playing alarm
+    function ringBell(time) {
+        audio.play();
+        alert(`It's ${time}`);
+    }
 
-const audio = new Audio('./assets/alarm.wav');
-audio.loop = true;
-
-//to start playing alarm
-function ringBell(time) {
-    audio.play();
-    alert(`It's ${time}`);
-}
-
-//to mute or pause the alarm tone
+    //to mute or pause the alarm tone
 function muteAlarm(){
     audio.pause();
 }
@@ -126,6 +131,7 @@ alarmList.addEventListener('click', (e) => {
         e.target.classList.remove('fa-bell');
         e.target.classList.add('fa-bell-slash');
         document.querySelector('.fa-bell-slash').style.color = "rgb(59, 59, 59)"; 
+        muteAlarm();
     }
 });
 
@@ -135,5 +141,10 @@ function resetInput() {
     minutes.value = '';
     seconds.value = '';
 }
+}).catch(err=> console.log(`Error is -> ${err}`));
+
+
+
+
 
 
