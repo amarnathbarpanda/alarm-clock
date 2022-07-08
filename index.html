@@ -11,29 +11,30 @@
 </head>
 
 <body>
-    <div id="container">
+    <div class="container">
 
         <!-- Alarm card element-->
-        <article id="card">
+        <article class="card">
+            <i id = "theme" class="fa-solid fa-moon fa-2x"></i>
             <h3 id="main_head">Alarm Clock</h3>
             <!-- Clock  -->
-            <section id="curr_time">
+            <section id="curr_time" class="time_light">
                 <span></span>
             </section>
             <!-- User input fields -->
             <section id="set_alarm">
-                <input type="number" id="hours" min="0" max="12" placeholder="hh"><span class="colon">:</span>
-                <input type="number" id="minutes" min="0" max="59" placeholder="mm"><span class="colon">:</span>
-                <input type="number" id="seconds" min="0" max="59" placeholder="ss"> 
-                <select name="" id="am_pm">
+                <input type="number" id="hours" min="0" max="12" placeholder="hh" class="input_light "><span class="colon colon_light colon_dark">:</span>
+                <input type="number" id="minutes" min="0" max="59" placeholder="mm" class="input_light "><span class="colon colon_light colon_dark">:</span>
+                <input type="number" id="seconds" min="0" max="59" placeholder="ss" class="input_light "> 
+                <select name="" id="am_pm" class="input_light">
                     <option value="AM">AM</option>
                     <option value="PM">PM</option>
                 </select>
                 <!-- Set alarm button -->
-                <button id="set_alarm_btn" type="reset">Set Alarm</button>
+                <button id="set_alarm_btn" class="btn_light">Set Alarm</button>
             </section>
             <!-- List of alarms set by the user -->
-            <h3 id="small_head">Alarms</h3>
+            <h3 id="small_head" class="head_light">Alarms</h3>
             <ul id="alarms">
                 
             </ul>

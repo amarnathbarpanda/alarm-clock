@@ -136,4 +136,46 @@ function resetInput() {
     seconds.value = '';
 }
 
+//toggle light mode and dark mode
 
+const theme = document.getElementById('theme');
+
+theme.addEventListener('click', ()=>{
+    //changing theme btn icon
+    if(theme.classList.contains('fa-moon')){
+        theme.classList.add('fa-sun');
+        theme.classList.remove('fa-moon');
+    }else{
+        theme.classList.remove('fa-sun');
+        theme.classList.add('fa-moon');
+    }
+
+    //changing container bachground
+    const container = document.querySelector('.container');
+    container.classList.toggle('container_dark');
+    
+    //changing card background
+    const card = document.querySelector('.card');
+    card.classList.toggle('card_dark');
+
+    //changing time color
+    const timeText = document.getElementById('curr_time');
+    timeText.classList.toggle('time_dark');
+
+    //changing input field color
+    const input = document.querySelectorAll('input');
+    input.forEach(elem => elem.classList.toggle('input_dark'));
+
+    const select = document.getElementById('am_pm');
+    select.classList.toggle('input_dark');
+
+    //changing set alarm btn color
+    setAlarmBtn.classList.toggle('btn_dark');
+
+    const smallHead = document.getElementById('small_head');
+    smallHead.classList.toggle('head_dark');
+    //changing alarm list color
+    const alarmListItems = document.getElementsByClassName('alarm');
+    alarmListItems.forEach(elem => elem.classList.toggle('alarm_dark'));
+    
+})

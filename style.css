@@ -2,7 +2,7 @@
 
 
 :root {
-    /* colors */
+    /* light mode colors */
     --accent1: rgb(22, 194, 22);
     --accent2: rgb(4, 187, 141);
     --white-dark: rgb(224, 224, 224);
@@ -14,6 +14,14 @@
     --thumbBG: rgba(136, 132, 132, 0.314);
     --trash : rgb(252, 61, 61);
     
+
+    /* Dark mode colors */
+
+    --dark: #12273a; 
+    --darker: rgb(16, 34, 50);
+    --darkest: #0e1d2b;
+
+
     /* fonts */
     --font-smaller: 1.4rem;
     --font-small: 1.7rem;
@@ -26,12 +34,15 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+
+
+
 html{
     font-size: 62.5%;
 }
 
 /* ------ Clock container --------*/
-#container {
+.container {
     width: 100%;
     height: 100vh;
     background: var(--white-dark);
@@ -40,10 +51,13 @@ html{
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
+
+
 /* --------- Clock Face ------ */
-#card {
+.card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -58,17 +72,24 @@ html{
     background: var(--white-dark);
     box-shadow: 8px 8px 16px var(--white-darker),
         -8px -8px 16px var(--white);
+
 }
+
+
 
 #main_head{
     font-size: var(--font-big);
 }
 
-#curr_time {
-    color: var(--accent1);
+#curr_time{
     font-size: var(--font-big);
     margin-bottom: 1.6rem;
 }
+
+.time_light{
+    color: var(--accent1);
+}
+
 
 #set_alarm {
     display: flex;
@@ -84,11 +105,14 @@ html{
     height: 4rem;
     font-size: var(--font-small);
     font-weight: 600;
-    color: var(--font-clr-accent);
-    background: var(--white-dark);
     outline: none;
     border-radius: 5px;
     padding: 1rem;
+}
+
+.input_light{
+    color: var(--font-clr-accent);
+    background: var(--white-dark);
 }
 
 
@@ -100,6 +124,9 @@ html{
 #set_alarm .colon {
     font-size: var(--font-small);
     font-weight: 900;
+}
+
+.colon_light{
     color: var(--font-clr-accent);
 }
 
@@ -107,60 +134,64 @@ html{
     font-size: var(--font-smaller);
     font-weight: 600;
     text-transform: uppercase;
-    background: linear-gradient(to bottom, var(--accent1), var(--accent2));
-    color: var(--white);
     padding: .6rem 1rem;
     border: 0;
     border-radius: 5px;
     cursor: pointer;
     letter-spacing: .1rem;
 }
-#set_alarm_btn:hover{
-    background: linear-gradient(to bottom, var(--accent2), var(--accent1));
+
+.btn_light{
+    background: var(--accent1);
+    color: var(--white);
 }
 
 #small_head {
-    color: var(--font-clr-accent);
     font-size: var(--font-small);
     text-align: left;
     width: 92%;
+}
+
+.head_light{
+    color: var(--font-clr-accent);
 }
 
 /*----------- List of alarms--------- */
 
 #alarms{
     width: 92%;
-    height: 25rem;
-
+    height: 20rem;
+    
     overflow-y: scroll;
 }
 /* custom scrollbar */
 #alarms::-webkit-scrollbar {
     width: 5px;
-  }
-  #alarms {
+}
+#alarms {
     scrollbar-width: thin;
     scrollbar-color: var(--thumbBG) var(--scrollbarBG);
-  }
-  #alarms::-webkit-scrollbar-track {
+}
+#alarms::-webkit-scrollbar-track {
     background: var(--scrollbarBG);
-  }
-  #alarms::-webkit-scrollbar-thumb {
+}
+#alarms::-webkit-scrollbar-thumb {
     background-color: var(--thumbBG) ;
     border-radius: 6px;
     border: 3px solid var(--scrollbarBG);
-  }
+}
 /* ----------------------- */
 .alarm{
     display: flex;
     align-items: center;
     justify-content: space-between;
     list-style: none;
-    color: var(--font-clr-primary);
     font-size: var(--font-small);
     width: 100%;
+    color: inherit;
     padding: 2rem 1.5rem;
 }
+
 .fa-bell{
     color: var(--accent2);
 }
@@ -173,6 +204,41 @@ html{
     padding: 0.5rem 1rem;
     cursor: pointer;
 }
+
+
+
+
+/* dark mode classes */
+.container_dark{
+    background: var(--darker);
+}
+
+.card_dark{
+    color: var(--white-darker);
+    background: var(--darker);
+    box-shadow: 8px 8px 16px var(--darkest),
+        -8px -8px 16px var(--dark);
+}
+
+.time_dark{
+    color: var(--accent2);
+}
+.input_dark{
+    color: var(--white-darker);
+    background: var(--darker);
+}
+.colon_dark{
+    color: var(--white-darker);
+}
+.btn_dark{
+    background: var(--accent2);
+    color: var(--dark);
+}
+.head_dark{
+    color: var(--white-darker);
+}
+
+
 
 @media screen and (max-width: 768px) {
     html{
@@ -188,8 +254,4 @@ html{
     #set_alarm #am_pm{
         width: 10rem;
     }
-<<<<<<< HEAD
   }
-=======
-  }
->>>>>>> 86eafc7daf45eb5e033fba3f51cc9ce1694b8981
